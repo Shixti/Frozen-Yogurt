@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <link rel="icon" type="image/x-icon" href="new logo.jpg">
+  <link rel="stylesheet" type="text/css" href="https://cdnj.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- css file -->
+  <link rel="stylesheet" type="text/css" href="2-menu.css">
+  <script scr="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <!-- header start -->
+  <header class="header">
+    <!-- logo -->
+    <a href="1-index.html" class="logo">
+      <img src="new logo.jpg" >
+    </a>
+    
+    <!-- nav bar start -->
+    <nav class="navbar">
+      <input type="checkbox" id="check">
+      <label for="check" class="check-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+    <ul>
+        <li><a href="1-index.html">Home</a></li>
+        <li><a class="active" href="2-menu.html">Menu</a></li>
+        <li><a href="3-about.html">About Us</a></li>
+      </ul>
+      <!-- <div id="menu-btn" class="fas fa-bars></div> -->
+    </nav>
+
+
+
+
+
+
+
+
+    <!-- nav bar end -->
+    
+    
+    <!-- hyperlink with icons (search, cart, profile, menu button) -->
+    <div class="icons">
+      <div class="cart-container" onmouseover="showCartForm()" onmouseout="hideCartForm()">
+        <a href="4-cart.htlm">
+          <div class="fas fa-shopping-cart" id="cartButton"></div>
+        </a>
+        <div class="cart-form" id="cartForm">
+          <form>
+            <div id="cartItems"></div>
+            <div id="total-price">Total Price: ₱<span id="totalPrice">0.00</span>
+            </div>
+          </form>
+      </div>
+    </div>
+      <!-- hyperlink link with icons (search, cart, profile, menu button) -->
+  </header>
+    <!-- header end -->
+    
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+    <h1 class="heading">OUR <span>FLAVORS</span></h1>
+    <p class="heading-description">Mixing up the best </p>
+    
+    
+    <div class="category-text"><i><h3>Frozen Yogurt</h3></i></div>
+    
+    <div class="menu">
+      <div class="container menu-section">
+        <!-- product 1 -->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="vanilla_dream.jpg" alt="Vanilla Dream">
+          </div>
+          <div class="menu-content" >
+            <h3>Vanilla Dream</h3>
+            <p>Creamy vanilla yogurt with real bean extract</p>
+            <div onclick="addToCart('Vanilla Dream (Small)', '₱30.00', 'Products/No BG/vanilla_dream.png', 'item1-s'); return false;">
+              <button id="item1-s">Small <span>₱30.00</span></button> <!-- SMALL -->
+            </div>
+            <div onlick="addToCart('Vanilla Dream (Medium)', '₱50.00', 'Products/No BG/vanilla_dream.png', 'item1-m'); return false;">
+              <button id="item1-m">Medium <span>₱50.00</span></button> <!-- MEDIUM -->
+            </div>
+            <div onlick="addtocart('Vanilla Dream (Large)', '₱100.00', 'Products/No BG/vanilla_dream.png', 'item1-l'); return false;">
+              <button id="item1-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+    </div>
+        
+        <!-- product 2 -->
+        <div class="menu-box" id="strawberry-cheesecake">
+          <div class="menu-img">
+            <img src="strawberry_cheesecake.jpg" alt="Strawberry Cheesecake">
+          </div>
+          <div class="menu-content" >
+            <h3>Strawberry Cheesecake</h3>
+            <p>Sweet Strawberry yogurt with a graham cracker crunch</p>
+            <div onclick="addToCart('Strawberry Cheesecake (Small)', '₱30.00', 'Products/No BG/strawberry_cheesecake.png', 'item2-s'); return false;">
+              <button id="item2-s">Small <span>₱30.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Strawberry Cheesecake (Medium)', '₱50.00', 'Products/No BG/strawberrt_cheesecake.png', 'item2-m'); return false;">
+              <button id="item2-m">Medium <span>₱50.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Strawberry Cheesecake (Large)', '₱100.00', 'Products/No BG/strawberry_cheesecake.png', 'item2-l'); return false;">
+              <button id="item2-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- product 3-->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="yogurt_mint.jpg" alt="Mint">
+          </div>
+          <div class="menu-content" >
+            <h3>Mint</h3>
+            <p>Refreshing peppermint yogurt with chocolate chips</p>
+            <div onclick="addToCart('Mint (Small)', '₱30.00', 'Products/No BG/yogurt_mint.png', 'item3-s'); return false;">
+              <button id="item3-s">Small <span>₱30.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Mint (Medium)', '₱50.00', 'Products/No BG/yogurt_mint.png', 'item3-m'); return false;">
+              <button id="item3-m">Medium <span>₱50.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Mint (Large)', '₱100.00', 'Products/No BG/yogurt_mint.png', 'item3-l'); return false;">
+              <button id="item3-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- product 4-->
+        <div class="menu-box" id="frappe-javachip">
+          <div class="menu-img">
+            <img src="peanutbutter_cup.jpg" alt="Peanut Butter Cup">
+          </div>
+          <div class="menu-content" >
+            <h3>Peanut Butter Cup</h3>
+            <p>Rich peanut butter yogurt with reese's pieces</p>
+            <div onclick="addToCart('Peanut Butter Cup (Small)', '₱30.00', 'Products/No BG/peanutbutter_cup.png', 'item4-s'); return false;">
+              <button id="item4-s">Small <span>₱30.00</span></button> <!-- SMALL -->
+            </div>
+          
+            <div onlick="addToCart('Peanut Butter Cup (Medium)', '₱50.00', 'Products/No BG/peanutbutter_cup.png', 'item4-m'); return false;">
+              <button id="item4-m">Medium <span>₱50.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Peanut Butter Cup (Large)', '₱100.00', 'Products/No BG/peanutbutter_cup.png', 'item4-l'); return false;">
+              <button id="item4-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Add more menu items here with the same structure -->
+      </div>
+      
+      <div class="category-text"><i><h3>Yogurt Parfait</h3></i></div>
+      
+      <div class="container menu-section">
+        <!-- product 1 -->
+        <div class="menu-box" id="tropical-temptation">
+          <div class="menu-img">
+            <img src="tropical_temptation.jpg" alt="Tropical Temptation">
+          </div>
+        <div class="menu-content">
+          <h3>Tropical Temptation</h3>
+          <p>Coconut yogurt, mango, pineapple, granola</p>
+          <div onclick="addToCart('Tropical Temptation (Small)', '₱30.00', 'Products/No BG/tropical_temptation.png', 'item5-s'); return false;">
+              <button id="item5-s">Small <span>₱30.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Tropical Temptation (Medium)', '₱50.00', 'Products/No BG/tropical_temptation.png', 'item5-m'); return false;">
+              <button id="item5-m">Medium <span>₱50.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Tropical Temptation (Large)', '₱100.00', 'Products/No BG/tropical_temptation.png', 'item5-l'); return false;">
+              <button id="item5-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- product 2 -->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="berry_bliss.jpg" alt="Berry Bliss">
+          </div>
+        <div class="menu-content">
+          <h3>Berry Bliss</h3>
+          <p>Mixed berry yogurt, fresh berries, honey</p>
+          <div onclick="addToCart('Berry Bliss (Small)', '₱90.00', 'Products/No BG/berry_bliss.png', 'item6-s'); return false;">
+              <button id="item6-s">Small <span>₱90.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Berry Bliss (Medium)', '₱100.00', 'Products/No BG/berry_bliss.png', 'item6-m'); return false;">
+              <button id="item6-m">Medium <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Berry Bliss (Large)', '₱120.00', 'Products/No BG/berry_bliss.png', 'item6-l'); return false;">
+              <button id="item6-l">Large <span>₱120.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- product 3 -->
+        <div class="menu-box" id="choco-banana">
+          <div class="menu-img">
+            <img src="chocolate_banana.jpg" alt="Chocolate Banana">
+          </div>
+        <div class="menu-content">
+          <h3>Chocolate Banana</h3>
+          <p>Chocolate yogurt, sliced banana, whipped cream</p>
+          <div onclick="addToCart('Chocolate Banana (Small)', '₱90.00', 'Products/No BG/chocolate_banana.png', 'item7-s'); return false;">
+              <button id="item7-s">Small <span>₱90.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Chocolate Banana (Medium)', '₱100.00', 'Products/No BG/chocolate_banana.png', 'item7-m'); return false;">
+              <button id="item7-m">Medium <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Chocolate Banana (Large)', '₱120.00', 'Products/No BG/chocolate_banana.png', 'item7-l'); return false;">
+              <button id="item7-l">Large <span>₱120.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- product 4 -->
+        <div class="menu-box" id="peachy-keen">
+          <div class="menu-img">
+            <img src="peachy_keen.jpg" alt="Peachy Keen">
+          </div>
+        <div class="menu-content">
+          <h3>Peachy Keen</h3>
+          <p>Peach yogurt, granola, caramel sauce</p>
+          <div onclick="addToCart('Peachy Keen (Small)', '₱90.00', 'Products/No BG/peachy_keen.png', 'item8-s'); return false;">
+              <button id="item8-s">Small <span>₱90.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Peachy Keen (Medium)', '₱100.00', 'Products/No BG/peachy_keen.png', 'item8-m'); return false;">
+              <button id="item8-m">Medium <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Peachy Keen (Large)', '₱120.00', 'Products/No BG/peachy_keen.png', 'item8-l'); return false;">
+              <button id="item8-l">Large <span>₱120.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+        </div>
+        <!-- Add more menu items here with the same structure -->
+        </div>
+      
+      <div class="category-text"><i><h3>Specialty Items</h3></i></div>
+      
+      <div class="container menu-section">
+      <!-- product 1 -->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="yogurt_sandwich.jpg" alt="Yogurt Sandwich">
+          </div>
+        <div class="menu-content">
+          <h3>Yogurt Sandwich</h3>
+          <p>Yogurt between two cookies</p>
+          <div onclick="addToCart('Yogurt Sandwich (Small)', '₱50.00', 'Products/No BG/yogurt_sandwich.png', 'item9-s'); return false;">
+              <button id="item9-s">Small box (3pcs) <span>₱50.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Yogurt Sandwich (Medium)', '₱100.00', 'Products/No BG/yogurt_sandwich.png', 'item9-m'); return false;">
+              <button id="item9-m">Medium box(7pcs) <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Yogurt Sandwich (Large)', '₱190.00', 'Products/No BG/yogurt_sandwich.png', 'item9-l'); return false;">
+              <button id="item9-l">Large box (12pcs) <span>₱190.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+      </div>
+
+        <!-- product 2 -->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="yogurt_pop.jpg" alt="Yogurt Pop">
+          </div>
+        <div class="menu-content">
+          <h3>Yogurt Pop</h3>
+          <p>Frozen Yogurt on a stick </p>
+          <div onclick="addToCart('Yogurt Pop (Small)', '₱50.00', 'Products/No BG/yogurt_pop.png', 'item10-s'); return false;">
+              <button id="item10-s">Small <span>₱50.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Yogurt Pop (Medium)', '₱75.00', 'Products/No BG/yogurt_pop.png', 'item10-m'); return false;">
+              <button id="item10-m">Medium <span>₱75.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Yogurt Pop (Large)', '₱100.00', 'Products/No BG/yogurt_pop.png', 'item10-l'); return false;">
+              <button id="item10-l">Large <span>₱100.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+      </div>
+
+      <!-- product 3 -->
+        <div class="menu-box">
+          <div class="menu-img">
+            <img src="acai_bowl.jpg" alt="Acai Bowl">
+          </div>
+        <div class="menu-content">
+          <h3>Acai Bowl</h3>
+          <p>Acai yogurt, granola, fresh fruit</p>
+          <div onclick="addToCart('Acai Bowl (Small)', '₱90.00', 'Products/No BG/acai_bowl.png', 'item11-s'); return false;">
+              <button id="item11-s">Small <span>₱90.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Acai Bowl (Medium)', '₱100.00', 'Products/No BG/acai_bowl.png', 'item11-m'); return false;">
+              <button id="item11-m">Medium <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Acai Bowl (Large)', '₱120.00', 'Products/No BG/acai_bowl.png', 'item11-l'); return false;">
+              <button id="item11-l">Large <span>₱120.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+      </div>
+
+      <!-- product 4 -->
+        <div class="menu-box" id="smoothie">
+          <div class="menu-img">
+            <img src="yogurt_smoothie.jpg" alt="Smoothie">
+          </div>
+        <div class="menu-content">
+          <h3>Smoothie</h3>
+          <p>Blended yogurt drink</p>
+          <div onclick="addToCart('Smoothie (Small)', '₱90.00', 'yogurt_smoothie.jpg', 'item12-s'); return false;">
+              <button id="item12-s">Small <span>₱90.00</span></button> <!-- SMALL -->
+            </div>
+            
+            <div onlick="addToCart('Smoothie (Medium)', '₱100.00', 'Products/No BG/yogurt_smoothie.png', 'item12-m'); return false;">
+              <button id="item12-m">Medium <span>₱100.00</span></button> <!-- MEDIUM -->
+            </div>
+            
+            <div onlick="addtocart('Smoothie (Large)', '₱120.00', 'Products/No BG/yogurt_smoothie.png', 'item12-l'); return false;">
+              <button id="item12-l">Large <span>₱120.00</span></button> <!-- LARGE -->
+            </div>
+          </div>
+      </div>
+        
+        </section>
+        <!-- Menu Section End -->
+
+        <!-- footer start -->
+        <section class="footer">
+          
+          <div class="container">
+            <div class="footer-box-1">
+              <h3>Location</h3>
+              <div class="footer-loc">
+                <a href="https://www.google.com/maps/place/TUP+-+College+of+Industrial+Education/@14.5873937,120.9848474,17z/data=!3m1!4b1!4m6!3m5!hufyifif" target=_blank>College  of Industrial Education, 660. TUP, Ermita, Manila, 1000</a>
+              </div>
+            </div>
+
+            <div class="footer-box">
+              <h3>Newsletter</h3>
+              <p>Stay update with our latest</p>
+              <form>
+                <input type="email" name="email" placeholder="name@gmail.com">
+                <button type="submit"><i class="fa-solid fa-right-long"></i></button>
+
+              </form>
+
+            </div>
+
+            <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>Connect With Us On:</p>
+            <div class="icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+
+        </div>
+      </div>
+        </section>
+        <!-- footer end -->
+        <script src="2-menu.js"></script>
+</body>
+</html>
